@@ -1,17 +1,16 @@
+use std::fs;
 use std::fs::File;
 use std::io::prelude::*;
 use std::io::BufReader;
-use walkdir::WalkDir;
-use std::fs;
 use std::path::Path;
+use walkdir::WalkDir;
 
 fn file_copy(from: &Path, ext: &str) -> std::io::Result<()> {
-            let file_stem = from.file_stem();
-            let dst_filename = format!("results/{}.{}", file_stem.unwrap().to_string_lossy(), ext);
-            fs::copy(from, Path::new(&dst_filename))?;
-Ok(())
+    let file_stem = from.file_stem();
+    let dst_filename = format!("results/{}.{}", file_stem.unwrap().to_string_lossy(), ext);
+    fs::copy(from, Path::new(&dst_filename))?;
+    Ok(())
 }
-
 
 fn main() -> std::io::Result<()> {
     let home_dir = dirs::home_dir().unwrap();
