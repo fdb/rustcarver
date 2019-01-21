@@ -1,0 +1,6 @@
+/target
+**/*.rs.bk
+/results/*.png
+/results/*.jpg
+/results/*.gif
+.DS_Store
