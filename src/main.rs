@@ -14,10 +14,7 @@ fn file_copy(from: &Path, ext: &str) -> std::io::Result<()> {
 
 fn main() -> std::io::Result<()> {
     let home_dir = dirs::home_dir().unwrap();
-    let safari_cache_dir = format!(
-        "{}/Library/Caches/com.apple.Safari",
-        home_dir.to_string_lossy()
-    );
+    let safari_cache_dir = "cache";
     let walker = WalkDir::new(safari_cache_dir).into_iter();
     for entry in walker {
         let entry = entry?;
