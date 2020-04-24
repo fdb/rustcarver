@@ -4,3 +4,4 @@
 /results/*.jpg
 /results/*.gif
 .DS_Store
+/cache
